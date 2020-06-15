@@ -12,11 +12,15 @@ import (
 )
 
 func main() {
+	setupServer().Run()
+}
+
+func setupServer() *gin.Engine {
+	gin.SetMode(gin.ReleaseMode)
 	r := gin.Default()
 	r.Use(loadData())
 	r.GET("/api/points", controllers.FindPoints)
-
-	r.Run()
+	return r
 }
 
 func loadData() gin.HandlerFunc {

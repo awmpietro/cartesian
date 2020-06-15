@@ -20,7 +20,12 @@ go mod download
 ```
 Then:
 ```
-go run *.go
+go run main.go
+```
+
+### Run Tests:
+```
+go test ./...
 ```
 
 ### Example of GET Request:
